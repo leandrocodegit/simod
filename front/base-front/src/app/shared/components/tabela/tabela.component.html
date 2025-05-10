@@ -1,0 +1,23 @@
+<p-table [columns]="cols" [value]="itens" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template #header let-columns>
+      <tr>
+          <th *ngFor="let col of columns">
+              {{ col.header }}
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template #body let-rowData let-columns="columns">
+      <tr>
+          <td *ngFor="let col of columns">
+
+            @if (col.field == 'status') { 
+              <p-tag [severity]="rowData[col.field].severity" [value]="rowData[col.field].value"></p-tag>
+            }
+            @else{
+              {{ rowData[col.field] }}
+            }
+
+          </td>
+      </tr>
+  </ng-template>
+</p-table>

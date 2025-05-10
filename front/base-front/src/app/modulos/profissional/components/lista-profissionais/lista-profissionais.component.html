@@ -1,0 +1,39 @@
+<div class="card">
+  <app-titulo-pesquisa [value]="{
+    titulo: 'Lista de profissionais',
+    botaoAdd: 'Novo profissional',
+    routerLink: 'form',
+    showAtivos: true,
+  }"></app-titulo-pesquisa>
+  <p-table [value]="profissionais" [scrollable]="true" scrollHeight="400px" styleClass="mt-4">
+    <ng-template #header>
+      <tr>
+        <th style="min-width:200px" pFrozenColumn class="font-bold">Registro</th>
+        <th style="min-width:100px">Nome</th>
+        <th style="min-width:200px">Country</th>
+        <th style="min-width:200px">Date</th>
+        <th style="min-width:200px">Company</th>
+        <th style="min-width:200px">Status</th>
+        <th style="min-width:200px">Activity</th>
+        <th style="min-width:200px">Representative</th>
+        <th style="min-width:200px" alignFrozen="right" pFrozenColumn [frozen]="balanceFrozen"
+          [ngClass]="{ 'font-bold': balanceFrozen }">Balance</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-customer>
+      <tr>
+        <td pFrozenColumn class="font-bold">{{ customer.id }}</td>
+        <td style="min-width:100px">{{ customer.nome }}</td>
+        <td>{{ customer.nome }}</td>
+        <td>{{ customer.nome }}</td>
+        <td>{{ customer.nome }}</td>
+        <td>{{ customer.nome }}</td>
+        <td>{{ customer.nome }}</td>
+        <td>{{ customer.nome }}</td>
+        <td alignFrozen="right" pFrozenColumn [frozen]="balanceFrozen" [ngClass]="{ 'font-bold': balanceFrozen }">
+
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

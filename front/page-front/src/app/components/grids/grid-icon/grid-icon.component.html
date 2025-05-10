@@ -1,0 +1,22 @@
+<div id="features" class="py-6 px-6 lg:px-20 mx-0 bg-surface-0">
+  <div class="grid grid-cols-12 gap-4 justify-center">
+    <div class="col-span-12 text-center mt-20 mb-6">
+      <app-pesquisar-pagina></app-pesquisar-pagina>
+    </div>
+
+    <div *ngFor="let item of products" class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg:pr-8 lg:pb-8 mt-6 lg:mt-0">
+      <div
+        style="height: 160px; padding: 1px; border-radius: 10px; background: linear-gradient(90deg, rgba(253, 228, 165, 0.2), rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(187, 199, 205, 0.2))">
+        <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
+          <div class="flex items-center justify-center mb-4"
+            style="width: 5.5rem; border-radius: 10px">
+            <img src="{{item.logo}}" alt="">
+          </div>
+          <h5 class="mb-2 text-surface-900 dark:text-surface-0">{{item.name}}</h5>
+          <span class="text-surface-600 dark:text-surface-200"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

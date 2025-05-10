@@ -1,0 +1,9 @@
+<div class="card">
+  <app-titulo-pesquisa [value]="{
+    titulo: 'Lista de usuários do sistema',
+    botaoAdd: 'Novo usuário',
+    routerLink: 'form',
+    showAtivos: true,
+  }"></app-titulo-pesquisa>
+   <app-tabela [cols]="cols" [itens]="itens"></app-tabela>
+</div>

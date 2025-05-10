@@ -1,0 +1,17 @@
+<div class="grid grid-cols-12 gap-4">
+  <app-stats-widget class="contents" />
+  <div class="col-span-12 xl:col-span-6">
+  </div>
+  <div class="col-span-8">
+    <app-proximas-agendas></app-proximas-agendas>
+  </div>
+  <div class="col-span-4">
+      <div class="col-span-12 xl:col-span-6">
+        <div class="card flex flex-col items-center chart">
+          <div class="font-semibold text-xl mb-4">Ocupação</div>
+          <p-chart type="doughnut" [data]="pieData" [options]="pieOptions"></p-chart>
+
+        </div>
+      </div>
+    </div>
+</div>

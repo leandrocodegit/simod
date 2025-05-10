@@ -1,0 +1,32 @@
+img{
+  width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+h3{
+  margin-bottom: 3px;
+}
+
+p{
+  font-size: 14px;
+}
+
+.flex {
+  align-items: center;
+  justify-content: space-between;
+}
+
+h6{
+  margin: 0;
+  color: color-mix(in srgb, var(--p-primary-color) calc(100% * var(--tw-text-opacity, 1)), transparent);
+}
+
+.box-card-profissional-item{
+  display: flex;
+}
+
+.box-card-profissional-detalhes{
+  margin-left: 25px;
+}

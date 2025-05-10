@@ -1,0 +1,77 @@
+<p-fluid>
+  <div class="flex mt-8">
+    <div class="card flex-col gap-6 w-full">
+      <div class="font-semibold text-xl">Cadastro de usuário do sistema</div>
+
+      <div class="card flex flex-auto flex-wrap gap-6 w-full">
+        <div class="flex flex-col gap-4" [formGroup]="form">
+          <div class="flex flex-wrap gap-2 w-full">
+            <label for="firstname" class="required">Nome completo</label>
+            <input formControlName="firstName" [class.border-error]="isInvalid('firstName')"
+              [(ngModel)]="usuario.firstName" pInputText type="text" />
+            @if (isInvalid('firstName')) {
+            <span class="text-error">Nome é obrigatório</span>
+            }
+          </div>
+          <div class="flex flex-wrap gap-2 w-full">
+            <label for="documento" class="required">CPF</label>
+            <input formControlName="documento" [class.border-error]="isInvalid('documento')"
+              [(ngModel)]="usuario.documento" name="documento" pInputText type="text" />
+            @if (isInvalid('documento')) {
+            <span class="text-error">Documento é obrigatório</span>
+            }
+          </div>
+          <div class="flex flex-wrap gap-2 w-full">
+            <label for="email" class="required">Email</label>
+            <input formControlName="email" [class.border-error]="isInvalid('email')" [(ngModel)]="usuario.email"
+              pInputText type="text" />
+            @if (isInvalid('email')) {
+            <span class="text-error">Email inválido</span>
+            }
+          </div>
+          <div class="flex flex-wrap gap-2 w-full">
+            <label for="phone">Contato</label>
+            <input formControlName="phone" [class.border-error]="isInvalid('phone')" [(ngModel)]="usuario.phone"
+              pInputText type="text" />
+          </div>
+          <div class="flex flex-wrap gap-2 w-full">
+            <label for="dataNascimento">Data de nascimento</label>
+            <input formControlName="dataNascimento" [class.border-error]="isInvalid('dataNascimento')"
+              [(ngModel)]="usuario.documento" name="dataNascimento" pInputText type="text" />
+            @if (isInvalid('dataNascimento')) {
+            <span class="text-error">Documento é obrigatório</span>
+            }
+          </div>
+        </div>
+        <div class="flex-grow mt-4">
+        <p-fieldset legend="Controle de acesso" [toggleable]="false">
+          <div class="flex flex-col gap-6" >
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="flex flex-wrap gap-2 w-full">
+                <label for="state">Perfil de acesso</label>
+                <p-select id="state" [(ngModel)]="dropdownItem" [options]="dropdownItems" optionLabel="name"
+                  placeholder="Selecione um perfil" class="w-full"></p-select>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <p-checkbox [(ngModel)]="semRestricao" id="checkOption3" name="option" [binary]="true" value="Quarta" />
+              <label for="checkOption3" class="ml-2">Controlar acesso</label>
+            </div>
+            @if (semRestricao) {
+            <div class="flex flex-wrap gap-2 w-full">
+              <label for="state">Permissão</label>
+              <p-select id="state" [(ngModel)]="dropdownItem" [options]="dropdownItems" optionLabel="name"
+                placeholder="Selecione uma restrição" class="w-full"></p-select>
+            </div>
+            <app-horario-atendimento />
+            }
+          </div>
+        </p-fieldset>
+      </div>
+      </div>
+      <app-voltar-salvar (salvarEmit)="salvar()"></app-voltar-salvar>
+    </div>
+  </div>
+</p-fluid>
+<p-confirmdialog [style]="{ width: '450px' }" />
+<p-toast></p-toast>

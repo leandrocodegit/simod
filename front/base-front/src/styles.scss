@@ -1,0 +1,253 @@
+
+@use './tailwind.css';
+@use './assets/layout/layout.scss';
+@use 'primeicons/primeicons.css';
+@use './assets/demo/demo.scss';
+
+
+body,
+.box-base,
+.body-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.box-base {
+  display: flex;
+  flex-direction: column;
+}
+
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.p-fieldset {
+  border: 1px solid #ebebeb81 !important;
+}
+
+.app-dark .p-fieldset{
+  border: 1px solid #ebebeb2d !important;
+}
+
+.p-togglebutton.p-togglebutton-checked {
+  background-color: var(--primary-color) !important;
+
+}
+.p-togglebutton.p-togglebutton-checked .p-togglebutton-icon, .p-togglebutton.p-togglebutton-checked .p-togglebutton-label{
+  color: white !important;
+}
+
+.badge-livre {
+  color: #00967e;
+  padding: 1px 7px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.box-calendar-day{
+  background-color: white;
+  box-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.322);
+}
+
+.app-dark .box-calendar-day{
+  background-color: var(--surface-overlay);
+}
+
+.bg-indisponivel {
+  border-bottom: solid #df6860 2px;
+  background-color: rgb(219, 219, 219);
+}
+
+.bg-indisponivel,
+.bg-indisponivel .badge-livre,
+.bg-indisponivel small {
+  color: var(--text-color);
+
+}
+
+.bg-weekend {
+  border-bottom: solid #fdab5e 3px!important;
+}
+
+.bg-indisponivel:hover {
+  cursor: not-allowed !important;
+}
+
+.bg-disponivel {
+  border-bottom: solid #59cab6 3px;
+}
+
+.badge-vaga {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #59cab6;
+  color: white;
+  padding: 5px 7px;
+  border-radius: 0 0 0 10px;
+  line-height: 1;
+  font-size: 10px;
+}
+
+.box-select-agenda {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.box-select-agenda p {
+  position: absolute;
+ display: none;
+ text-align: center;
+ bottom: -5px;
+ color: white;
+ background: #59cab54f;
+ width: 100%;
+ margin: 0;
+ font-size: 10px;
+}
+
+
+.bg-disponivel .box-select-agenda:hover {
+  background: rgba(1, 172, 172, 0.192);
+}
+
+.bg-disponivel .box-select-agenda:hover p {
+  display: block;
+}
+
+.box-header-titulo{
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-painel{
+  display: flex;
+  flex-direction: column;
+}
+
+.p-toast .p-toast-message.p-toast-message-success {
+  background: rgb(228 248 240 / 70%) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-info {
+  background: rgb(219 234 254 / 70%) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn {
+  background: rgb(255 242 226 / 70%) !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-error {
+  background: rgba(255, 231, 230, 70%) !important;
+}
+
+
+
+.input-hora:enabled:focus {
+  border-color: var(--p-inputtext-focus-border-color);
+  box-shadow: var(--p-inputtext-focus-ring-shadow);
+  outline: var(--p-inputtext-focus-ring-width) var(--p-inputtext-focus-ring-style) var(--p-inputtext-focus-ring-color);
+  outline-offset: var(--p-inputtext-focus-ring-offset);
+}
+
+
+.p-iconfield{
+  padding-inline-start: 0 !important;
+}
+
+.p-fieldset-legend {
+  background-color: var(--surface-overlay) !important;
+  padding: 5px 25px !important;
+}
+
+.p-iconfield .p-inputtex{
+  padding: auto;
+}
+
+.p-datatable-table-container{
+  border-radius: 5px !important;
+}
+
+.text-error{
+  color: rgb(253, 55, 55);
+}
+
+.border-error{
+  border: 1px solid rgb(253, 55, 55) !important;
+}
+
+label.required:after{
+  content: " * ";
+  color: rgb(253, 55, 55);
+  font-size: 18px;
+}
+
+.p-inputtext{
+  height: 35px !important;
+}
+
+.p-megamenu-horizontal {
+  align-items: center;
+  padding: 15px !important;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown li a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+

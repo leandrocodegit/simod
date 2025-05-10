@@ -1,0 +1,13 @@
+<div class="font-semibold text-xl mb-4">{{value.titulo}}</div>
+<div class="flex gap-2">
+  <p-iconfield iconPosition="left">
+    <input pInputText type="text" placeholder="Pesquisar" />
+    <p-inputicon class="pi pi-search" />
+  </p-iconfield>
+  @if(value.showAtivos){
+  <p-togglebutton [(ngModel)]="ativos" [onIcon]="'pi pi-lock'" offIcon="pi pi-lock-open" [onLabel]="'Todos'"
+    offLabel="Apenas ativos" />
+  }
+  <p-button [routerLink]="value.routerLink" [label]="value.botaoAdd" icon="pi pi-plus"></p-button>
+</div>
+<br>

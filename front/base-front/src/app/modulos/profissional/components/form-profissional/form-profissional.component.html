@@ -1,0 +1,73 @@
+<p-fluid>
+  <div class="flex mt-8">
+    <div class="card flex flex-col gap-6 w-full">
+      <div class="font-semibold text-xl">Cadastro de profissionais</div>
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="flex flex-wrap gap-2 w-full">
+          <label for="firstname2">Nome</label>
+          <input pInputText id="firstname2" type="text" />
+        </div>
+        <div class="flex flex-wrap gap-2 w-full">
+          <label for="lastname2">Nº de registro</label>
+          <input pInputText id="lastname2" type="text" />
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="flex flex-wrap gap-2 w-full">
+          <label for="lastname2">Email</label>
+          <input pInputText id="lastname2" type="text" />
+        </div>
+        <div class="flex flex-wrap gap-2 w-full">
+          <label for="lastname2">Contato</label>
+          <input pInputText id="lastname2" type="text" />
+        </div>
+      </div>
+
+      <div class="flex flex-wrap">
+        <label for="address">Descrição</label>
+        <textarea pTextarea id="address" rows="4"></textarea>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="flex flex-wrap gap-2 w-full">
+          <label for="state">State</label>
+          <p-select id="state" [(ngModel)]="dropdownItem" [options]="dropdownItems" optionLabel="name"
+            placeholder="Select One" class="w-full"></p-select>
+        </div>
+        <div class="flex flex-wrap gap-2 w-full">
+          <label for="zip">Zip</label>
+          <input pInputText id="zip" type="text" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+          <label for="state">Dias de atendimento</label>
+          <app-seleciona-dias-semada></app-seleciona-dias-semada>
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <label for="state">Horário de atendimento</label>
+         <p-button routerLink="form" label="Novo horário" icon="pi pi-plus"></p-button>
+        <p-table [value]="horarios" [scrollable]="true" scrollHeight="400px" styleClass="mt-4">
+            <ng-template #header>
+                <tr>
+                    <th style="min-width:100px">Dia semana</th>
+                    <th style="min-width:200px">Início</th>
+                    <th style="min-width:200px">Termino</th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-horario>
+                <tr>
+                    <td pFrozenColumn class="font-bold">{{ horario.dia }}</td>
+                    <td style="min-width:100px">{{ horario.inicio | date: 'hh'}}hs</td>
+                    <td>{{ horario.termino | date: 'hh'}}hs</td>
+                </tr>
+            </ng-template>
+        </p-table>
+      </div>
+      <app-voltar-salvar (salvarEmit)="salvar()"></app-voltar-salvar>
+    </div>
+  </div>
+</p-fluid>
+<p-confirmdialog [style]="{ width: '450px' }" />
+<p-toast></p-toast>

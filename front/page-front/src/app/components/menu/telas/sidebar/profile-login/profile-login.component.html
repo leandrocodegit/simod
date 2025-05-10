@@ -1,0 +1,15 @@
+<div class="flex flex-col gap-4">
+  @if (!isLogin) {
+  <div class="flex flex-col gap-2">
+    <span  (click)="login()" class="text-sm text-muted-color font-semibold">Login</span>
+</div>
+}
+  <div class="flex flex-col gap-2">
+      <span  class="text-sm text-muted-color font-semibold">Minha conta</span>
+  </div>
+  @if (isLogin) {
+  <div class="flex flex-col gap-2">
+      <span (click)="logout()" class="text-sm text-muted-color font-semibold">Sair</span>
+  </div>
+}
+</div>
